@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Facultad de Ingenieria - FI Jujuy</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/5.3.3/css/bootstrap.min.css}">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .carousel-caption {
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            text-align: center;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            z-index: 2;
+        }
+        .carousel-caption h3 {
+            font-size: 2rem;
+            line-height: 1.2;
+            margin-bottom: 1rem;
+        }
+        .carousel-caption p {
+            font-size: 1.2rem;
+        }
+
+        .main-content {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px; /* Ajustar el margen superior */
+        }
+
+        .main-content .col-lg-9 {
+            order: 1;
+            background-color: #f8f9fa;
+            padding: 20px;
+        }
+
+        .main-content aside {
+            order: 2;
+            background-color: #e9ecef;
+            padding: 20px;
+        }
+
+        .section-title {
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .main-content .col-lg-9 > div {
+            margin-bottom: 20px;
+        }
+
+        .mi-container {
+            width: 100%;
+            padding-right: 0;
+            padding-left: 0;
+            margin-right: auto;
+            margin-left: auto;
+        }
+
+        /* Estilos específicos para el footer */
+        footer {
+            background-color: #343a40;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="mi-container">
+        <header>
+            <div data-th-replace="~{fragments/header::encabezado}"></div>
+            <div data-th-replace="~{fragments/header::navbar}"></div>
+        </header>
+
+        <!-- Carousel y tarjetas -->
+        <div class="carousel-container position-relative">
+            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="/img/logo1.jpeg" class="d-block w-100 img-fluid" alt="Imagen 1">
+                        <div class="carousel-caption text-center">
+                            <h3 class="fs-2">Facultad de Ingenieria - UnJu</h3>
+                            <p class="fs-5">Únete a nosotros</p>
+                            <a href="#" class="btn btn-primary">Explora</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/img/logo3.jpg" class="d-block w-100 img-fluid" alt="Imagen 2">
+                        <div class="carousel-caption text-center">
+                            <h3 class="fs-2">Facultad de Ingenieria - UnJu</h3>    
+                            <p class="fs-5">Únete a nosotros</p>
+                            <a href="#" class="btn btn-primary">Explora</a>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="/img/logo4.jpg" class="d-block w-100 img-fluid" alt="Imagen 3">
+                        <div class="carousel-caption text-center">
+                            <h3 class="fs-2">Facultad de Ingenieria - UnJu</h3>
+                            <p class="fs-5">Únete a nosotros</p>
+                            <a href="#" class="btn btn-primary">Explora</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container main-content">
+            <!-- Barra Lateral con Menú de Navegación -->
+            <aside class="col-lg-3">
+                <div class="p-4 mb-3 bg-light rounded">
+                    <h4 class="fst-italic">Podría Interesarte</h4>
+                    <nav class="nav flex-column">
+                        <a class="nav-link active" aria-current="page" href="#">Biblioteca</a>
+                        <a class="nav-link" href="#">Calendario Académico</a>            
+                        <a class="nav-link" href="#">Centro de Estudiantes</a>
+                        <a class="nav-link" href="#">Mesas de Exámenes</a>
+                    </nav>
+                </div>
+            </aside>
+
+            <!-- Sección de Contenido Principal -->
+           <div class="col-lg-9">
+		            <div class="mb-4 rounded-3 bg-light p-4 shadow-sm">
+		                <h3>Bienvenidos a la Facultad de Ingeniería de Jujuy</h3>
+		                <p class="mb-0">La Universidad Nacional de Jujuy es una universidad pública argentina ubicada en San Salvador de Jujuy, provincia de Jujuy. Fundada en 1973, cuenta con cuatro facultades y cincoinstitutos, donde cursan sus carreras alrededor de 25.000 estudiantes. Hay 40 mil usuarios de alumnos en UNJu Virtual.
+		            </div>
+
+                <!-- Acordeón para la estructura de las secciones -->
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingOne">
+                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Introducción y Bienvenida
+                            </button>
+                        </h2>
+                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="alert alert-info" role="alert">
+                                    La Facultad de Ingeniería de la Universidad Nacional de Jujuy se destaca por su compromiso con la formación académica de excelencia y la investigación en diversas disciplinas ingenieriles. Situada en una región estratégica de Argentina, la facultad no solo ofrece programas educativos rigurosos y actualizados, sino que también promueve el desarrollo regional y nacional a través de la innovación tecnológica y el desarrollo sostenible. Además, se distingue por su contribución al crecimiento profesional de sus estudiantes y su impacto positivo en la comunidad universitaria y más allá.
+                                </div>
+                                <figure class="text-center">
+                                    <img src="/img/logo1.jpeg" alt="Fachada de la Facultad" class="img-fluid">
+                                </figure>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingTwo">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Oferta Académica
+                            </button>
+                        </h2>
+                        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <nav id="navbar-example3" class="h-100 flex-column align-items-stretch pe-4 border-end">
+                                            <nav class="nav nav-pills flex-column">
+                                                <a class="nav-link" href="#programas-grado">Programas de Grado</a>
+                                                <a class="nav-link" href="#cursos-diplomaturas">Cursos y Diplomaturas</a>
+                                            </nav>
+                                        </nav>
+                                    </div>
+                                    <div class="col-8">
+                                        <div data-bs-spy="scroll" data-bs-target="#navbar-example3" data-bs-offset="0" class="scrollspy-example-2" tabindex="0">
+                                            <div id="programas-grado">
+                                                <h4>Programas de Grado</h4>
+                                                <ul>
+                                                    <li>Ingeniería en Computación</li>
+                                                    <li>Ingeniería Electromecánica</li>
+                                                    <li>Ingeniería en Recursos Naturales Renovables</li>
+                                                    <li>Ingeniería Química</li>
+                                                </ul>
+                                            </div>
+                                            <div id="cursos-diplomaturas">
+                                                <h4>Cursos y Diplomaturas</h4>
+                                                <ul>
+                                                    <li>Diplomatura en Procesamiento de Minerales</li>
+                                                    <li>Tecnicatura Universitaria en Perforaciones</li>
+                                                    <li>Tecnicatura Universitaria en Cs. de la Tierra Orientada a Petróleo</li>
+                                                    <li>Tecnicatura Universitaria en Diseño Integral de Videojuegos</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingThree">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                Noticias Recientes y Talleres
+                            </button>
+                        </h2>
+                        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <div class="p-2 align-self-center fw-medium">
+                                    <h4>Curso de Extensión: Herramientas Gerenciales para el Desarrollo Estratégico de las PYMES</h4>
+                                    <p>Inicio: 19 de junio</p>
+                                    <p>Docente: Tec. Superior Universitario en Recursos Humanos Torres Rocío del Valle</p>
+                                    <p>Carga horaria: 20 hs. reloj</p>
+                                    <p>Modalidad: Virtual asincrónico</p>
+                                    <p>Metodología: Teórico - práctico</p>
+                                    <p>Duración: 1 mes</p>
+                                    <p>Requisitos: Secundario completo a partir de los 18 años de edad</p>
+                                    <p>Destinatarios: Gestores de PYMES, emprendedores, estudiantes de administración o carreras afines y público en general</p>
+                                    <figure class="text-center">
+                                        <img src="/img/taller1.jpeg" alt="Taller" class="img-fluid">
+                                    </figure>
+
+                                    <h4>Taller de Capacitación: Qué Hacemos con el Estrés en Nuestras Vidas</h4>
+                                    <p>Destinado a investigadores y personal docente de la FI</p>
+                                    <p>Temas que compartiremos:</p>
+                                    <ul>
+                                        <li>¿Qué es el estrés y cómo afecta en la vida cotidiana de las personas?</li>
+                                        <li>Estrategias que ayudan a mejorar el manejo de los niveles de estrés y la calidad de vida</li>
+                                        <li>Importancia del cuidado de la salud mental y su relación con el estrés - Mitos</li>
+                                        <li>Mindfulness: beneficios para lidiar con el estrés</li>
+                                        <li>Alimentación saludable e ingesta de alimentos que ayudan a mejorar el estado de salud y los niveles de estrés</li>
+                                    </ul>
+                                    <p>Fechas: 12, 19, 26 de junio y 3 de julio de 2024</p>
+                                    <p>Horario: 10:00 a 11:30 hs</p>
+                                    <p>Lugar: Aula 25, Facultad de Ingeniería UNJu</p>
+                                    <p>Modalidad: Presencial con entrega de certificación</p>
+                                    <p>Formulario de inscripción: <a href="http://forms.gle/5qD3U18dRi63swDU6" target="_blank">http://forms.gle/5qD3U18dRi63swDU6</a></p>
+                                     <figure class="text-center">
+                                        <img src="/img/taller5.jpg" alt="Taller3" class="img-fluid">
+                                    </figure>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   
+     
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingFour">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                Contacto y Localización
+                            </button>
+                        </h2>
+                        <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                            <div class="accordion-body">
+                                <h4>Información de Contacto</h4>
+                                <p>Teléfono: 388 439-5911</p>
+                                <p>Dirección: Av. Bolivia 1234, San Salvador de Jujuy, Jujuy, Argentina</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pie de página -->
+        <footer class="bg-light text-dark py-4 mt-5">
+            <div data-th-replace="~{fragments/footer::footer}"></div>
+        </footer>
+    </div>
+
+    <!-- Bootstrap y jQuery -->
+    <script th:src="@{/webjars/jquery/3.6.0/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/5.3.3/js/bootstrap.bundle.min.js}"></script>
+
+    <!-- Script para inicializar el acordeón -->
+    <script>
+        $(document).ready(function(){
+            // Inicializar el acordeón de Bootstrap
+            var accordion = new bootstrap.Collapse(document.getElementById('accordionExample'), {
+                toggle: false // Ajustar según necesidades
+            });
+        });
+    </script>
+</body>
+</html>
